@@ -2,5 +2,4 @@
 .coverage
 .env
 .pytest_cache
-db.sqlite3
 node_modules
