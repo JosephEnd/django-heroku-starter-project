@@ -20,8 +20,7 @@ The stack consists of:
 1. Activate this project's virtualenv, run in project root folder `pipenv shell`.
    Alternatively, run a command inside the virtualenv with `pipenv run`.
 
-1. NOTE!!: Renaming or removing the lock file is not a good idea, generally     speaking. If you install dependencies with with `pipenv install <package>` or `pipenv install --dev <package>`, then Pipenv will manage the lock file for you.
-   numbers or add packages run; `pipenv update --dev`.
+1. NOTE!!: Renaming or removing the lock file is not a good idea, generally speaking. If you install dependencies with with`pipenv install <package>` or `pipenv install --dev <package>`, then Pipenv will manage the lock file for you.
 1. Create a new virtual environment with all dependencies by executing with `pipenv install --dev --ignore-pipfile`.
    The flag `ignore-pipfile` is used to indicate that the exact versions of the dependencies as specified in `Pipfile.lock` should be installed.
    The flag `dev` is used to also install development dependencies.
