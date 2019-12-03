@@ -10,10 +10,12 @@ pytest = "*"
 pytest-cov = "*"
 pytest-django = "*"
 pytest-watch = "*"
+gunicorn = "*"
 
 [packages]
 django = "==2.2.7"
 psycopg2-binary = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-ROOT_URLCONF = "backend.urls"
+ROOT_URLCONF = "conf.urls"
 
 TEMPLATES = [
     {
@@ -56,7 +56,7 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = "backend.wsgi.application"
+WSGI_APPLICATION = "conf.wsgi.application"
 
 
 # Database
