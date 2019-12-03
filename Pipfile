@@ -11,11 +11,13 @@ pytest-cov = "*"
 pytest-django = "*"
 pytest-watch = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [packages]
 django = "==2.2.7"
 psycopg2-binary = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
