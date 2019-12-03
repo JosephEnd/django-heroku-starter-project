@@ -1,6 +1,6 @@
 build:
   docker:
-    web: Dockerfile
+    web: gunicorn --workers=2 --chdir src/happiness conf.wsgi
   config:
     SUPERUSER_USERNAME: happinessapp-user
     SUPERUSER_PASSWORD: happinessapp-pass-2$8,t6$21p
