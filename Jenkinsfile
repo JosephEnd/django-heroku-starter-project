@@ -38,8 +38,11 @@ pipeline {
 
     stage("Staging deployment") {
         steps {
+          sshagent(['kabisa-ci']) {
+          sh "mkdir -p ~/.ssh && ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts"
           sh "git remote | grep heroku >/dev/null || git remote add heroku git@heroku.com:kb-happiness.git"
           sh "git push heroku HEAD:master"
+        }
       }
     }
   }
