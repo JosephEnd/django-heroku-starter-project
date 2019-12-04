@@ -34,19 +34,12 @@ pipeline {
           sh "chown -R \$(stat -c '%u' .) \$WORKSPACE"
         }
       }
-
-      stage("Staging deployment") {
-          steps {
-            sh "git remote | grep heroku >/dev/null || git remote add heroku git@heroku.com:kb-happiness.git"
-            sh "git push heroku HEAD:master"
-        }
-      }
-
-
     }
-
-
-
-
+    stage("Staging deployment") {
+        steps {
+          sh "git remote | grep heroku >/dev/null || git remote add heroku git@heroku.com:kb-happiness.git"
+          sh "git push heroku HEAD:master"
+      }
+    }
   }
 }
