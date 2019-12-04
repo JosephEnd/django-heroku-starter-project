@@ -3,4 +3,5 @@
 .env
 .pytest_cache
 .yarn-error.log
+Dockerfile
 node_modules
