@@ -73,7 +73,7 @@ MIDDLEWARE = [
 ]
 
 
-# Database
+# Database Need updating
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 DATABASES = {
     "default": {
