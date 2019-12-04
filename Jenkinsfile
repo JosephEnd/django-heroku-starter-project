@@ -35,6 +35,7 @@ pipeline {
         }
       }
     }
+    
     stage("Staging deployment") {
         steps {
           sh "git remote | grep heroku >/dev/null || git remote add heroku git@heroku.com:kb-happiness.git"
