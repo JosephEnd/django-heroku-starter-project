@@ -43,7 +43,6 @@ pipeline {
         }
       }
 
-      when { branch "master" }
 
       steps {
         sshagent(['kabisa-ci']) {
