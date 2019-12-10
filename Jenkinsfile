@@ -4,7 +4,7 @@ if (env.BRANCH_NAME == "develop") {
 }
 
 pipeline {
-  agent any
+  agent none
 
   options {
     ansiColor("xterm")
@@ -37,6 +37,7 @@ pipeline {
     }
 
     stage("Staging deployment") {
+      agent any
       when { branch "master" }
       steps {
         sshagent(['kabisa-ci']) {
