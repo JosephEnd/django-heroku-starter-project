@@ -21,10 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+if os.getenv("APP_ENV") == "production":
+    SECRET_KEY = os.getenv("SECRET_KEY")
+else:
+    SECRET_KEY = ",^NqzcYF'#V3jh(NqvJZ*gm28&^4YE{C8?<78MCB{*z'XE?o]}"
 
-SECRET_KEY = ",^NqzcYF'#V3jh(NqvJZ*gm28&^4YE{C8?<78MCB{*z'XE?o]}"
-
-SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("APP_ENV") == "development"
 
@@ -32,7 +33,6 @@ ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -126,6 +126,10 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Heroku ssl
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = os.getenv("SECURE_SSL_REDIRECT")
-SECURE_SSL_REDIRECT = False
+
+
+if os.getenv("APP_ENV") == "production":
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = os.getenv("SECURE_SSL_REDIRECT")
+else:
+    SECURE_SSL_REDIRECT = False
