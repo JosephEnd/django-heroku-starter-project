@@ -23,6 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ",^NqzcYF'#V3jh(NqvJZ*gm28&^4YE{C8?<78MCB{*z'XE?o]}"
 
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 DEBUG = os.getenv("APP_ENV") == "development"
 
 ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
@@ -123,5 +125,5 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Heroku ssl
-SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_SSL_REDIRECT = False
