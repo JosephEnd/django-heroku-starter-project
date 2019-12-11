@@ -77,10 +77,11 @@ MIDDLEWARE = [
 
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 if os.getenv("APP_ENV") == "production":
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES["default"].update(
-        default="postgres://scrltvmqjqbydw:a768212f0fba79a5be2df32192ba6f4cdfced60f476ca58f17200828f2c2d7c6@ec2-54-247-171-30.eu-west-1.compute.amazonaws.com:5432/dd5k1oqhi3cqd7"
+    db_from_env = dj_database_url.config(
+        default="postgres://scrltvmqjqbydw:a768212f0fba79a5be2df32192ba6f4cdfced60f476ca58f17200828f2c2d7c6@ec2-54-247-171-30.eu-west-1.compute.amazonaws.com:5432/dd5k1oqhi3cqd7",
+        conn_max_age=500,
     )
+    DATABASES["default"].update(db_from_env)
 else:
     DATABASES = {
         "default": {
