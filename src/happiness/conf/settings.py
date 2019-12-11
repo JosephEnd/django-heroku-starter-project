@@ -78,9 +78,7 @@ MIDDLEWARE = [
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 if os.getenv("APP_ENV") == "production":
     DATABASES = {}
-    DATABASES["default"] = dj_database_url.config(
-        default=os.getenv("DATABASE_URL"), conn_max_age=500,
-    )
+    DATABASES["default"] = dj_database_url.config(ssl_require=True)
 else:
     DATABASES = {
         "default": {
