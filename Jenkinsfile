@@ -38,7 +38,7 @@ pipeline {
 
     stage("Staging deployment") {
       agent any
-      
+      when { branch "master" }
       steps {
         sshagent(['kabisa-ci']) {
           sh "mkdir -p ~/.ssh && ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts"
