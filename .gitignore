@@ -1,6 +1,5 @@
 .DS_Store
 .coverage
-.env
 .pytest_cache
 .yarn-error.log
 node_modules
