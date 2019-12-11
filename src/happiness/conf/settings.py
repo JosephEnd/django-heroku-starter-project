@@ -79,8 +79,7 @@ MIDDLEWARE = [
 if os.getenv("APP_ENV") == "production":
     DATABASES = {}
     DATABASES["default"] = dj_database_url.config(
-        default="postgres://scrltvmqjqbydw:a768212f0fba79a5be2df32192ba6f4cdfced60f476ca58f17200828f2c2d7c6@ec2-54-247-171-30.eu-west-1.compute.amazonaws.com:5432/dd5k1oqhi3cqd7",
-        conn_max_age=500,
+        default=os.getenv("DATABASE_URL"), conn_max_age=500,
     )
 else:
     DATABASES = {
