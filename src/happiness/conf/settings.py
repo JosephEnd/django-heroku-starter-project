@@ -61,7 +61,7 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = "conf.wsgi.application"
+WSGI_APPLICATION = "wsgi.application"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
