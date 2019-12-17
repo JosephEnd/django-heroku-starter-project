@@ -13,40 +13,66 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 
+# -----------------------------------------------------------------------
+# Basic Config
+# -----------------------------------------------------------------------
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# -----------------------------------------------------------------------
+DEBUG = os.getenv("APP_ENV") == "development"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# TEMPLATE_DIRS = (BASE_DIR, "../templates")
+ROOT_URLCONF = "urls"
+WSGI_APPLICATION = "wsgi.application"
 
-# Template dir inside the project
-TEMPLATE_DIRS = os.path.join(BASE_DIR, "../../templates")
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+# -----------------------------------------------------------------------
+# Security
+# -----------------------------------------------------------------------
+# WARNING: keep the secret key used in production secret! ##
+# -----------------------------------------------------------------------
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Allowed hosts to run the application on
+ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
+
+# conditional for secret key depending on environment
 if os.getenv("APP_ENV") == "production":
     SECRET_KEY = os.getenv("SECRET_KEY")
 else:
     SECRET_KEY = ",^NqzcYF'#V3jh(NqvJZ*gm28&^4YE{C8?<78MCB{*z'XE?o]}"
 
+# Password validation
+# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+    },
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+]
 
-DEBUG = os.getenv("APP_ENV") == "development"
+# Ssl conditional local or Heroku
+if os.getenv("APP_ENV") == "production":
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = os.getenv("SECURE_SSL_REDIRECT")
+else:
+    SECURE_SSL_REDIRECT = False
 
-ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
-
-
-# Application definition
+# -----------------------------------------------------------------------
+# Application Configuration
+# -----------------------------------------------------------------------
+# Django default
 INSTALLED_APPS = [
-    "happinessmeter",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Middleware Config
+    # User apps
+    "happiness.apps.happinessmeter",
 ]
-
-ROOT_URLCONF = "urls"
-
 
 TEMPLATES = [
     {
@@ -64,7 +90,6 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = "wsgi.application"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -79,7 +104,11 @@ MIDDLEWARE = [
 ]
 
 
+# -----------------------------------------------------------------------
+# Database Configuration
+# -----------------------------------------------------------------------
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+# -----------------------------------------------------------------------
 if os.getenv("APP_ENV") == "production":
     DATABASES = {}
     DATABASES["default"] = dj_database_url.config(ssl_require=True)
@@ -96,22 +125,11 @@ else:
     }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
-]
-
-
+# -----------------------------------------------------------------------
 # Internationalization
+# -----------------------------------------------------------------------
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-
+# -----------------------------------------------------------------------
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -122,18 +140,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+# -----------------------------------------------------------------------
 # Static files (CSS, JavaScript, Images)
+# -----------------------------------------------------------------------
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+# -----------------------------------------------------------------------
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_URL = "/static/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-# Heroku ssl
-if os.getenv("APP_ENV") == "production":
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    SECURE_SSL_REDIRECT = os.getenv("SECURE_SSL_REDIRECT")
-else:
-    SECURE_SSL_REDIRECT = False
