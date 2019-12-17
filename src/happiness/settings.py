@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Middleware Config
+    "materialize",
     # User apps
     "rating.apps.RatingConfig",
 ]
