@@ -1,1 +1,1 @@
-web: gunicorn --chdir src/happiness conf.wsgi --log-file -
+web: gunicorn --chdir src/happiness happiness.wsgi --log-file -
