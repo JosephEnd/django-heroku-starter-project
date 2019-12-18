@@ -88,7 +88,7 @@ background-color: var(--AppBackgroundColor);
 
 .smileyRatingBarList {
   width: 240px;
-  padding-top: 3px;
+  padding-top: 4px;
   padding-left: 8px !important;
 }
 
@@ -119,4 +119,12 @@ background-color: var(--AppBackgroundColor);
   -moz-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
+}
+
+/* test flexbox technique */
+.flexbox {
+  display: flex;
+  flew-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
