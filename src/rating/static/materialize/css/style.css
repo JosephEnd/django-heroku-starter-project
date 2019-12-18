@@ -1,3 +1,4 @@
+{% load static %}
 /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
@@ -12,23 +13,24 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
-/* Variabelen                        */
+/*------------------------------------------*/
+/* Variables                                */
 /*------------------------------------------*/
 :root {
---AppBackgroundColor: #eff1f3 !important;
+--AppBackgroundColor: #fcfcfc !important;
 --AppTextColor: #272c30 !important;
 --AppFont: Poppins !important;
 
---Happinessbar-background-image: url("/img/assets-happinessbar/happiness_bar.png");
+--Happinessbar-background-image: url("/static/img/assets-happinessbar/happiness_bar.png");
 
 --HappinessBarWidth: 240px;
 --HappinessBarHeight: 79px;
 
---IconListWidth: 42px;
+--IconListSize: 42px;
 
 }
 
-
+/*------------------------------------------*/
 /* App page settings                        */
 /*------------------------------------------*/
 html, body, .appbody {
@@ -58,10 +60,9 @@ background-color: var(--AppBackgroundColor);
   padding: 0 0 0 0 !important;
 }
 
-.happinessbar > .smileyRatingBarList > li > a > img  {
+.happinessbar > .smileyRatingBarList > li > #iconBox > a > img  {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .smileyRatingBarList {
@@ -70,7 +71,8 @@ background-color: var(--AppBackgroundColor);
   list-style: none;
 }
 
-/* CSS HappinessMeter         */
+/*------------------------------------------*/
+/* CSS HappinessMeter Size specific         */
 /*------------------------------------------*/
 .happinessbar {
   background-size: var(--HappinessBarWidth);
@@ -85,11 +87,36 @@ background-color: var(--AppBackgroundColor);
 }
 
 .smileyRatingBarList {
-  width: var(--HappinessBarWidth);
-  padding-top: 4px;
+  width: 240px;
+  padding-top: 3px;
+  padding-left: 8px !important;
 }
 
 .smileyRatingBarList > li {
   display: inline-block;
-  width: var(--IconListWidth);
+  width: 42px;
+}
+
+/*------------------------------------------*/
+/* CSS HappinessMeter Transitions           */
+/*------------------------------------------*/
+
+#iconBox img.bn-hover-hidden:hover {
+  opacity:0;
+}
+
+#iconBox {
+  position:relative;
+  height: var(--IconListSize);
+  width: var(--IconListSize);
+  margin:0 auto;
+}
+
+#iconBox img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }

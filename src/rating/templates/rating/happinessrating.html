@@ -10,6 +10,65 @@
         <link href="{% static '/materialize/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
 <body>
-  <h1>Hello, world!</h1>
-</body>
+  <div class="appbody valign-wrapper no-pad-bot" id="index-banner">
+    <div class="container" style="width: 100%;height: 100%;max-width: 100%;margin: auto;">
+      <br><br>
+
+      <div class="row" style="width: 100%;height: 100%;">
+        <div class="valign-wrapper">
+          <div class="happinessbar">
+              <ul class="smileyRatingBarList">
+                <li>
+                  <div id="iconBox" class="bn-meter">
+                    <a href="index.html">
+                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_HeelSlecht_wit.png' %}" title="Gaat slecht">
+                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_HeelSlecht.png' %}" title="Gaat slecht">
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div id="iconBox" class="bn-meter">
+                    <a href="index.html">
+                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_MinderGoed_wit.png' %}" title="Kan beter">
+                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_MinderGoed.png' %}" title="Kan beter">
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div id="iconBox" class="bn-meter">
+                    <a href="index.html">
+                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_Neutraal_wit.png' %}" title="Ok">
+                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_Neutraal.png' %}" title="Ok">
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div id="iconBox" class="bn-meter">
+                    <a href="index.html">
+                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_GaatGoed_wit.png' %}" title="Gaat goed">
+                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_GaatGoed.png' %}" title="Gaat goed">
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div id="iconBox" class="bn-meter">
+                    <a href="index.html">
+                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_HeelGoed_wit.png' %}" title="Fantastisch">
+                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_HeelGoed.png' %}" title="Fantastisch">
+
+                    </a>
+                  </div>
+                </li>
+              </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/materialize/js/materialize.js"></script>
+  </body>
+
 </html>
