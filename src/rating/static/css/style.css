@@ -94,7 +94,7 @@ background-color: var(--AppBackgroundColor);
 
 .smileyRatingBarList > li {
   display: inline-block;
-  width: 42px;
+  width: var(--IconListSize);
 }
 
 /*------------------------------------------*/
