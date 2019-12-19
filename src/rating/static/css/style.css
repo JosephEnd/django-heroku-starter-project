@@ -19,8 +19,9 @@
 :root {
 
 --AppBackgroundColor: #fcfcfc !important;
---AppTextColor: #272c30 !important;
---AppFont: Poppins !important;
+--AppTextColor:       #272c30 !important;
+--AppFont:            Poppins !important;
+--PrimaryColor:       #4d4d4d;
 --IconListSize:       42px;
 --HappinessBarWidth:  240px;
 --HappinessBarHeight: 79px;
@@ -81,7 +82,7 @@ nav {
 
 /* Style the links inside the navigation bar */
 .nav-wrapper a {
-  color: #2d3034;
+  color:            var(--PrimaryColor);
 }
 
 
@@ -128,7 +129,7 @@ nav {
 /*------------------------------------------*/
 .happinessbar > .happinessbarTitle {
 
-  position:        relative;
+  position:         relative;
   font-size:        18px;
   right:            20px;
 }
@@ -157,16 +158,16 @@ nav {
 
 .iconBox {
 
-  position:       relative;
-  height:         var(--IconListSize);
-  width:          var(--IconListSize);
-  margin:         0 auto;
+  position:         relative;
+  height:           var(--IconListSize);
+  width:            var(--IconListSize);
+  margin:           0 auto;
 }
 
 .iconBox img {
 
-  position:       absolute;
-  left:           0;
+  position:         absolute;
+  left:             0;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition:    opacity 0.5s ease-in-out;
   -o-transition:      opacity 0.5s ease-in-out;
@@ -177,24 +178,60 @@ nav {
 /*------------------------------------------*/
 /* Materialize overrides                    */
 /*------------------------------------------*/
-/* textarea for feedback */
-.ratingfeedback {
-  width:          var(--HappinessBarWidth);
+
+/*
+When creating your CSS selector,
+change "brown" to something of your choosing
+*/
+.waves-effect.waves-brown .waves-ripple {
+/* The alpha value allows the text and background color
+of the button to still show through. */
+  background-color: rgba(15, 17, 18, 0.65) !important;
 }
 
-/* fontsize textarea */
+/* button color */
+.btn {
+  background-color: var(--PrimaryColor);
+}
+
+}
+.btn:visited{
+  background-color: var(--PrimaryColor);
+}
+.btn:hover {
+  background-color: #636363;
+}
+.btn:active{
+  background-color: #f0f0f0;
+}
+.btn:focus{
+  background-color: #f0f0f0;
+}
+
+
+/* textarea for feedback */
+.ratingfeedback {
+  width:            var(--HappinessBarWidth);
+  justify-content:  center;
+  align-content:    center;
+  align-items:      center;
+  text-align:       center;
+  text-align:       -webkit-center;
+}
+
+/* textarea  fontsize */
 textarea.materialize-textarea {
-   font-size:       13px !important;
+  font-size:        13px !important;
 }
 
 
 .input-field textarea:focus + label {
-  color:          #000 !important;
+  color:            var(--PrimaryColor) !important;
 }
 
 /* label underline focus color */
 .input-field textarea:focus {
 
-  border-bottom:  1px solid #000 !important;
-  box-shadow:     0 1px 0 0 #000 !important;
+  border-bottom:    1px solid var(--PrimaryColor) !important;
+  box-shadow:       0 1px 0 0 var(--PrimaryColor) !important;
 }
