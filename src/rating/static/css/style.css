@@ -189,13 +189,11 @@ of the button to still show through. */
   background-color: rgba(15, 17, 18, 0.65) !important;
 }
 
-/* button color */
+/* button colors */
 .btn {
   background-color: var(--PrimaryColor);
 }
-
-}
-.btn:visited{
+.btn:visited {
   background-color: var(--PrimaryColor);
 }
 .btn:hover {
