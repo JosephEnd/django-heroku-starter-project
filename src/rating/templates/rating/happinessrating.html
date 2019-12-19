@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
         <title>Happiness</title>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Compiled and minified CSS -->
@@ -12,63 +13,95 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!-- Custom CSS additions -->
         <link href="{% static '/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <!-- Temp jQuery Materialize characterCounter, will go in external file -->
+        <script>
+        $(document).ready(function() {
+          $('textarea#feedbackarea1').characterCounter();
+        });
+        </script>
+        <!-- Temp jQuery Materialize tapTarget, will go in external file -->
+        <script>
+        $(document).ready(function(){
+          $('.tap-target').tapTarget();
+        });
+        </script>
     </head>
 <body>
   <div class="appbody no-pad-bot" id="index-banner">
-    <div class="container flexbox"style="width: 100%;height: 100%;max-width: 100%;margin: auto;">
-      <div class="row" style="width: 100%;">
-        <div class="valign-wrapper flexbox">
-          <div class="happinessbar">
-              <ul class="smileyRatingBarList">
-                <li>
-                  <div class="iconBox bn-meter">
-                    <a href="index.html">
-                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_HeelSlecht_wit.png' %}" title="Gaat slecht">
-                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_HeelSlecht.png' %}" title="Gaat slecht">
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="iconBox bn-meter">
-                    <a href="index.html">
-                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_MinderGoed_wit.png' %}" title="Kan beter">
-                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_MinderGoed.png' %}" title="Kan beter">
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="iconBox bn-meter">
-                    <a href="index.html">
-                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_Neutraal_wit.png' %}" title="Ok">
-                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_Neutraal.png' %}" title="Ok">
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="iconBox bn-meter">
-                    <a href="index.html">
-                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_GaatGoed_wit.png' %}" title="Gaat goed">
-                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_GaatGoed.png' %}" title="Gaat goed">
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="iconBox bn-meter">
-                    <a href="index.html">
-                      <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_HeelGoed_wit.png' %}" title="Fantastisch">
-                      <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_HeelGoed.png' %}" title="Fantastisch">
-                    </a>
-                  </div>
-                </li>
-              </ul>
+    <div class="container" style="width: 100%;height: 100%;max-width: 100%;margin: 0;">
+      <!-- Container for Nesting -->
+      <div class="flex-container">
+      <!-- Ratings bar row -->
+        <div class="row">
+            <div class="happinessbar"> <!-- This is the Ratings bar with the icons -->
+                <ul class="smileyRatingBarList">
+                  <li>
+                    <div class="iconBox bn-meter">
+                      <a href="index.html">
+                        <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_HeelSlecht_wit.png' %}" title="Gaat slecht">
+                        <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_HeelSlecht.png' %}" title="Gaat slecht">
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBox bn-meter">
+                      <a href="index.html">
+                        <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_MinderGoed_wit.png' %}" title="Kan beter">
+                        <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_MinderGoed.png' %}" title="Kan beter">
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBox bn-meter">
+                      <a href="index.html">
+                        <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_Neutraal_wit.png' %}" title="Ok">
+                        <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_Neutraal.png' %}" title="Ok">
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBox bn-meter">
+                      <a href="index.html">
+                        <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_GaatGoed_wit.png' %}" title="Gaat goed">
+                        <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_GaatGoed.png' %}" title="Gaat goed">
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBox bn-meter">
+                      <a href="index.html">
+                        <img class="bn-hover-show" src="{% static '/img/assets-happinessbar/Icon_HeelGoed_wit.png' %}" title="Fantastisch">
+                        <img class="bn-hover-hidden" src="{% static '/img/assets-happinessbar/Icon_HeelGoed.png' %}" title="Fantastisch">
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+            </div>
           </div>
+
+    <!-- Rating textfield -->
+      <div class="row">
+          <form class="col 12">
+            <div class="row ratingfeedback">
+              <div class="input-field col s12">
+                <textarea id="feedbackarea1" class="materialize-textarea" data-length="240" maxlength="240"></textarea>
+                <label for="feedbackarea1">Care to give some feedback?</label>
+              </div>
+          </form>
         </div>
       </div>
     </div>
+
+    
+
+
+
   </div>
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="/static/materialize/js/materialize.js"></script>
-  </body>
+</div> <!--  appbody no-pad-bot" id="index-banner" -->
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/static/materialize/js/materialize.js"></script>
+</body>
 
 </html>
