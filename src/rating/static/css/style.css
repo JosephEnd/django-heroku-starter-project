@@ -60,6 +60,30 @@ html, body, .appbody {
   margin-bottom:    0 !important;
 }
 
+/*------------------------------------------*/
+/* Navbar specific css                      */
+/*------------------------------------------*/
+
+/* Navbar at bottom for Mobile */
+nav {
+  -webkit-box-shadow: none !important;
+  box-shadow:       none !important;
+}
+
+.nav-wrapper {
+
+  background-color: #f0f0f0;
+  overflow:         hidden;
+  position:         fixed;
+  bottom:           0;
+  width:            100%;
+}
+
+/* Style the links inside the navigation bar */
+.nav-wrapper a {
+  color: #2d3034;
+}
+
 
 /*------------------------------------------*/
 /* CSS HappinessMeter Default               */
