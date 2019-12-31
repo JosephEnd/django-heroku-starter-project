@@ -1,0 +1,122 @@
+{% load static %}
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+/*------------------------------------------*/
+/* Variables                                */
+/*------------------------------------------*/
+:root {
+--AppBackgroundColor: #eff1f3 !important;
+--AppTextColor: #272c30 !important;
+--AppFont: Poppins !important;
+
+--Happinessbar-background-image: url("/static/img/assets-happinessbar/happiness_bar.6d43851ecd6c.png");
+
+--HappinessBarWidth: 240px;
+--HappinessBarHeight: 79px;
+
+--IconListSize: 42px;
+
+}
+
+/*------------------------------------------*/
+/* App page settings                        */
+/*------------------------------------------*/
+html, body, .appbody {
+height: 100%;
+background-color: var(--AppBackgroundColor);
+}
+
+/*------------------------------------------*/
+/* CSS HappinessMeter Default               */
+/*------------------------------------------*/
+.happinessbarTitleDiv {
+  min-width: var(--HappinessBarWidth);
+}
+
+.happinessbarTitle {
+  color: var(--AppTextColor);
+  font-family: var(--AppFont);
+  font-weight: 700;
+  text-align: right;
+}
+
+.happinessbar {
+  width: var(--HappinessBarWidth);
+  background-image: var(--Happinessbar-background-image);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0 0 0 0 !important;
+}
+
+.happinessbar > .smileyRatingBarList > li > #iconBox > a > img  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.smileyRatingBarList {
+  padding-left: 0;
+  margin-bottom: 0px !important;
+  list-style: none;
+}
+
+/*------------------------------------------*/
+/* CSS HappinessMeter Size specific         */
+/*------------------------------------------*/
+.happinessbar {
+  background-size: var(--HappinessBarWidth);
+  width: var(--HappinessBarWidth !important);
+  height: var(--HappinessBarHeight);
+}
+
+.happinessbar > .happinessbarTitle {
+  position: relative;
+  font-size: 18px;
+  right: 20px;
+}
+
+.smileyRatingBarList {
+  width: var(--HappinessBarWidth);
+  padding-top: 4px;
+}
+
+.smileyRatingBarList > li {
+  display: inline-block;
+  width: var(--IconListSize);
+}
+
+/*------------------------------------------*/
+/* CSS HappinessMeter Transitions           */
+/*------------------------------------------*/
+
+#iconBox img.bn-hover-hidden:hover {
+  opacity:0;
+}
+
+#iconBox {
+  position:relative;
+  height: var(--IconListSize);
+  width: var(--IconListSize);
+  margin:0 auto;
+}
+
+#iconBox img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
