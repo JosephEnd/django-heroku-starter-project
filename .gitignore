@@ -1,3 +1,4 @@
+src/staticfiles
 .DS_Store
 .coverage
 .pytest_cache

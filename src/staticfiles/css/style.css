@@ -62,12 +62,20 @@ html, body, .appbody {
 }
 
 .ratingspage {
-  height:           100%;  
+  height:           90%;
 }
+
 
 /*------------------------------------------*/
 /* Navbar specific css                      */
 /*------------------------------------------*/
+
+/* Row navbar */
+
+.navbar {
+  margin-bottom:    0 !important;
+  z-index:          999 !important;
+}
 
 /* Navbar at bottom for Mobile */
 nav {

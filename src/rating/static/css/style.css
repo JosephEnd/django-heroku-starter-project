@@ -18,7 +18,7 @@
 /*------------------------------------------*/
 :root {
 
---AppBackgroundColor: #fcfcfc !important;
+--AppBackgroundColor: #000000;
 --AppTextColor:       #272c30 !important;
 --AppFont:            Poppins !important;
 --PrimaryColor:       #4d4d4d;
@@ -34,7 +34,7 @@
 html, body, .appbody {
 
   height:           100%;
-  background-color: var(--AppBackgroundColor);
+  background-color: var(--AppBackgroundColor) !important;
 }
 
 /* Set container class to flex */
@@ -62,7 +62,7 @@ html, body, .appbody {
 }
 
 .ratingspage {
-  height:           100%;  
+  height:           100%;
 }
 
 /*------------------------------------------*/
