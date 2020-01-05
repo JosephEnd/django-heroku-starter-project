@@ -71,7 +71,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # User apps
-    "auth",
+    "happiness_auth.apps.HappinessAuthConfig",
     "rating.apps.RatingConfig",
 ]
 
@@ -163,3 +163,5 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 ]
+
+AUTH_USER_MODEL = "happiness_auth.CustomUser"
