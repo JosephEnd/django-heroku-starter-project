@@ -40,9 +40,9 @@ pipeline {
       agent any
       when { branch "master" }
       steps {
-        sshagent(['kabisa-ci']) {
+        sshagent(['agentname']) {
           sh "mkdir -p ~/.ssh && ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts"
-          sh "git remote | grep heroku >/dev/null || git remote add heroku git@heroku.com:kb-happiness.git"
+          sh "git remote | grep heroku >/dev/null || git remote add heroku git@heroku.com:projectname.git"
           sh "git push heroku HEAD:master"
           }
         }
