@@ -1,4 +1,4 @@
-# Happiness app
+# Django-starter
 
 This back end is based on Django.
 The stack consists of:
