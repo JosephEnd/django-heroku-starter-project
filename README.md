@@ -56,3 +56,4 @@ Execute `flake8` to lint all code.
 ## Code formatting
 
 Execute `black .` to format all code.
+
